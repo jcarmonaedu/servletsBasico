@@ -19,33 +19,20 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(urlPatterns = {"/ServletEjemplo2"})
 public class ServletEjemplo2 extends HttpServlet {
-
-  
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
+            throws ServletException, IOException {     
         //http://localhost:8080/ServletEjemplo1/ServletEjemplo2?nombre=Jorge
-        String nombre = request.getParameter("nombre");
-        
+        String nombre = request.getParameter("nombre");   
         // Aqui va el formato de respuesta
         PrintWriter salida = response.getWriter();
-        // Generamos respuesta de peticion
+        // Generamos respuesta de peticion....
         salida.println("<html><body>");
         salida.println("<h1 style='text-aligne'>Prueba Servlet de : " + nombre + "<h1>");
         salida.println(" ");
         salida.println(" ");
         salida.println("La Fecha Hora actual: " + new Date());
-        salida.println("</body></html>");
-        
+        salida.println("</body></html>");    
+        salida.close();
     }
 }
